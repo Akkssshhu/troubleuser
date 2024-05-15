@@ -1,0 +1,26 @@
+<!-- <app-search [dataToChild]="categoryId"></app-search> -->
+<div class="container" style="min-height: 625px;">
+  <div class="row">
+    <div id="thumbnailPannel">
+      <div class="machineType" *ngFor="let node of childNode;let i=index">
+        <div id="machineTypeCaption">{{node.friendlyName}}:</div>
+        <div class="thumbnail" *ngFor="let child of node.child;let j=index">
+          <div class="categoryContent">
+            <div class="heightcategory">
+              <img src="{{child.nodeIconURL}}" class="categoryImg"
+                (click)="(child.child && child.child !==null && child.child.length > 0) ? getcategorylist(child.nodeId,child.friendlyName) : viewProblem(child.nodeId,child.friendlyName)">
+            </div>
+            <div id="machineName">{{child.friendlyName}} </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="childNode && (childNode ==null || childNode == undefined || childNode.length == 0)">
+      <div class="row">
+        <div class="col-lg-12">
+          <h1> No SubCategory available</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

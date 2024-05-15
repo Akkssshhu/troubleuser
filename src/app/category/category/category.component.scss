@@ -1,0 +1,110 @@
+.thumbnail {
+    border: none !important;
+}
+
+#searchPannel {
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    z-index: 1;
+    font-size: 14px !important;
+    padding-top: 40px;
+}
+
+
+/* .abs_position{
+position: absolute;
+background-color:rgba(0,0,0,0.7);
+width:100%;
+top:0;
+left:0;
+right:0;
+bottom:0;
+margin:0 auto;
+z-index:1;
+font-size:14px !important;
+padding-top: 150px;
+}
+
+.rel_position{
+position: relative;
+width:100%;
+top:0;
+left:0;
+right:0;
+bottom:0;
+margin:0 auto;
+z-index:1;
+font-size:14px !important;
+padding-top:40px;
+} */
+
+#searchForm {
+    display: inline-block;
+    max-width: 600px;
+    width: 90%;
+}
+
+#searchForm>input {
+    float: left;
+    border-radius: 10px 0px 0px 0px;
+    padding: 10px 2%;
+    border: 1px #cccccc solid;
+    width: 80%;
+    border-right: 0px;
+    outline: none;
+}
+
+#searchForm #searchList {
+    width: 98.7%;
+    margin-top: 42px;
+    text-align: left;
+    background-color: #FFFFFF;
+    overflow-y: auto;
+    border: 1px solid #CCCCCC;
+    max-height: 19em;
+}
+
+#searchForm #searchList .searchItem {
+    float: left;
+    padding: 5px 2% 5px 2%;
+    width: 96%;
+    cursor: pointer;
+}
+
+#searchForm #searchList .searchItem:hover {
+    background-color: #cccccc;
+}
+
+#searchForm #searchBtn {
+    float: left;
+    padding: 10px 2%;
+    background-color: #EEB111;
+    color: #FFFFFF;
+    width: 11%;
+    border-radius: 0px 10px 0px 0px;
+}
+
+.categoryImg {
+    width: 100%;
+    padding: 10px;
+    min-height: 140px;
+    overflow: hidden;
+}
+
+.heightcategory {
+    min-height: 220px;
+    max-height: 220px;
+}
+
+.thumbnail #machineName {
+    font-size: 14px;
+    text-align: center;
+    border-top: 1px solid lightgray;
+    padding: 8px 8px;
+    min-height: 20px;
+}

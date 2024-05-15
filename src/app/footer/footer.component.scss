@@ -1,0 +1,25 @@
+.showChatBox {
+    display: block;
+    // top: 20px;
+    right: 20px;
+    bottom: 0px;
+    width: 850px;
+    // height:300px;
+    max-height: 900px;
+    border-radius: 8px 8px 0px 0px;
+    position: absolute;
+}
+
+.hideChatBox {
+    display: none;
+}
+
+.virtualTop {
+    background-color: #40b7ad;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 21px;
+    font-weight: 400;
+    border-radius: 8px 8px 0px 0px;
+}

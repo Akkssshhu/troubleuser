@@ -1,0 +1,7 @@
+<div *ngFor="let opt of valueSet">
+  <div id="contentBtnPannel" *ngIf="opt.action !=='' && opt.action !==null && opt.action!==undefined ">
+    <div [ngClass]="opt.value =='Yes' ? 'optionBtnYes' : 'optionBtnNo'" style="text-transform: uppercase;" (click)="selectOption(opt.action)">
+      {{opt.value}}
+    </div>
+  </div>
+</div>

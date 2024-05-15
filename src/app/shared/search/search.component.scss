@@ -1,0 +1,75 @@
+
+#searchPannel{
+    width:100%;
+    position:absolute;	
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:0 auto;
+    z-index:1;
+    font-size:14px !important;
+    // background-color:rgba(0,0,0,0.7);
+    // padding-top:160px;
+    }
+    
+    #searchPannel #searchForm{
+        display:inline-block;	
+        max-width:600px;	
+        width:90%;
+    }
+    
+    
+    #searchPannel #searchForm > input {
+    float:left;
+    border-radius:10px 0px 0px 0px;
+    padding:10px 2%;
+    border:1px #cccccc solid;
+    width:80%;
+    border-right:0px;
+    outline: none;
+    }
+    
+    
+    #searchPannel #searchForm #searchList{
+        width: 94.8%; // changed by arati prev value 90.7 
+        margin-top:42px;
+        text-align:left;
+        background-color:#FFFFFF;
+        overflow-y:auto;
+        border:1px solid #CCCCCC;
+        max-height:19em;
+    }
+    
+    
+    #searchPannel #searchForm #searchList .searchItem{
+        float:left;
+        padding:5px 2% 5px 2%;
+        width:100%; // changed by arati prev value 96
+        cursor:pointer;
+        
+    }
+    
+    #searchPannel #searchForm #searchList .searchItem:hover{
+        background-color:#cccccc;
+        width: 100%
+    }
+    
+    
+    #searchPannel #searchForm #searchBtn{
+    float:left;		
+    padding:10px 2%;
+    background-color:#EEB111;	
+    color:#FFFFFF;
+    width:15%; // changed by arati prev value 11 8/8/2019
+    border-radius:0px 10px 0px 0px;
+    }
+    
+    #logInPage {
+        width: 100%;
+        height: 0;
+    }
+    .search_btn{
+        background: transparent;
+        border: none;
+    }

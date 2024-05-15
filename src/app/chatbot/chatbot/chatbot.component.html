@@ -1,0 +1,108 @@
+<div class="ForAnimation " style=" margin-right: 0px;text-align: -webkit-right;">
+    <div [ngClass]="{'showChatBox':ShowChatBot == true, 'hideChatBox':ShowChatBot==false}">
+        <div>
+            <!-- border-radius: 8px 8px 0px 0px;  -->
+            <div class="virtualTop">Virtual Assistant<i class="fa fa-times-circle" aria-hidden="true" style="float: right;font-size: 30px;cursor:pointer;" (click)="chatbot()"></i></div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="wrapper" class="scroll" style="border:1px solid lightgray;background: #fff;">
+                        <div id="pageDesign">
+                            <div id="first_div"></div>
+                            <div id="main">
+                                <!-- <div class="container">
+            <div class="row"> -->
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 min-height">
+                                    <div>
+                                        <div tabindex="1" #focusedDiv class="no-focus-outline" *ngFor="let chat of chatBotJsonArray;let i=index">
+                                            <!-- [ngClass]="(chat.robot.type =='PROBLEM')?'my-class1':''" -->
+                                            <div class="chat-log">
+
+                                                <!-- <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil">
+                    </div> -->
+
+                                                <img src="assets/images/typing-icon.jpg" style="max-width: 60px;" [ngClass]="(i == chatBotJsonArray.length -1 && chatBotJsonArray[i].robot.label =='') ? 'show_img' : 'hide_img'">
+                                                <div class="chat-log__item" [ngClass]="i == chatBotJsonArray.length -1 ? 'ans_visible' : ''">
+                                                    <h3 class="chat-log__author">
+                                                        {{utilsService.isNonEmpty(chat.robot.label)? chat.robot.label : ''}}
+                                                    </h3>
+                                                    <div id="contentDisplay" *ngIf="chat.robot.type !=='PROBLEM'">
+                                                        <div id="contentMedia">
+                                                            <div *ngFor="let imageSlide of chatBotJsonArray[i].robot.media;let j=index">
+                                                                <img src="{{imageSlide.curl}}" class="que_img" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row" id="action_btn" *ngIf="i == chatBotJsonArray.length -1 &&
+                      (chat.robot.type == 'QUESTION' ||
+                      chat.robot.type == 'SOLUTION')">
+                                                        <div class="col-lg-12">
+                                                            <form [formGroup]="form" (keyup)="executeAllFormulae()">
+                                                                <div *ngFor="let question of questions;">
+                                                                    <div class='control form-group' [ngSwitch]="question.controlType">
+                                                                        <div *ngSwitchCase="'radio'">
+                                                                            <button-group [id]="question.key" [formControlName]="question.key" [valueSet]="question.options" [UserResponse]="opt" (sendResponse)="getResponse($event)" (click)="nextPage()">
+                                                                            </button-group>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div style="border: 1px solid green;"> -->
+                                                    <div class="row" *ngIf="chat.robot.type =='PROBLEM'">
+                                                        <div class="col-lg-12">
+                                                            <div id="contentBtnPannel" class="answerBtn">
+                                                                <div style="text-transform: uppercase;" (click)="goToQuestion(chat.robot)">
+                                                                    {{startButtonLabel}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- </div> -->
+                                                </div>
+                                                <div class="chat-log__item chat-log__item--own" *ngIf="chat.robot.type !=='END' && chat.robot.type !=='SOLUTIONEND' &&
+                  chat.human.label !==undefined && chat.human.label !==null && chat.human.label !=='' &&
+                  i !== chatBotJsonArray.length - 1" [ngClass]="(chat.robot.type !=='END' && chat.robot.type !=='SOLUTIONEND' &&
+                  chat.human.label !==undefined && chat.human.label !==null && chat.human.label !=='' &&
+                  i !== chatBotJsonArray.length - 1) ? 'que_visible' : ''">
+                                                    <h3 class="chat-log__author">{{chat.human.label}}</h3>
+                                                    <!-- <div class="chat-log__message">You</div> -->
+                                                    <div class="pagebottom"></div>
+                                                </div>
+                                                <!-- <div class="outgoing_msg_img"
+                      *ngIf="chat.robot.type !=='END' && chat.robot.type !=='SOLUTIONEND' && chat.human.label !==undefined && chat.human.label !==null && chat.human.label !=='' && i !== chatBotJsonArray.length - 1">
+                      <img src="assets/images/human.png" alt="sunil" style="border-radius: 50%;"></div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- </div>
+          </div> -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="chat-form">
+                        <form class="form-horizontal">
+                            <div class="row">
+                                <div class="col-sm-10 col-xs-12 col-md-10">
+                                    <input type="text" class="form-control marginTopBottom10" autofocus id="" [formControl]="message" placeholder="Message" />
+                                </div>
+                                <div class="col-sm-2 col-xs-12 col-md-2">
+                                    <button type="submit" class="btn btn-info btn-block send" [disabled]="enableInput" style="background-color: #138496;" (click)="sendRequest(message.value)"><!-- Send -->
+                  <i class="fa fa-send-o"></i>
+                </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

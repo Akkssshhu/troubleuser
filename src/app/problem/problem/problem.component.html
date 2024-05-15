@@ -1,0 +1,28 @@
+<!-- <app-search [dataToChild]="categoryId"></app-search> -->
+<!-- <div style="background: #e7e7e7;height: 100%;"> -->
+<div class="container" style="min-height: 625px;">
+  <div class="row">
+    <div style="margin-top: 80px;" *ngIf="allProblems && allProblems.length >0">
+      <div id="issueList">
+        <div class="issue" *ngFor="let problem of allProblems;let i=index"
+          (click)="startTroubleshoot(problem.nextAction,problem.label,problem.questionId,problem.treeId)">
+          <div id="iconContainer">
+            <img
+              src="{{problem.media && problem.media.length >0 ? problem.media[0].curl : 'assets/images/dummyIcon.jpg' }}" />
+          </div>
+          <div id="caption" class="colorOrange" title="{{problem.label}}">{{(problem.label && problem.label.length>65)?
+            (problem.label | slice:0:20)+'..':(problem.label)}}
+          </div>
+        </div>
+      </div>
+      <div *ngIf="allProblems && (allProblems ==null || allProblems == undefined || allProblems.length == 0)">
+        <div class="row">
+          <div class="col-lg-12">
+            <h1> No problems available</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->

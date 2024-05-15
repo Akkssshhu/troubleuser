@@ -1,0 +1,39 @@
+<div mat-dialog-content style="overflow: unset;">
+  <div class="row">
+    <div class="col-lg-12">
+      <div id="wrapper">
+        <div id="pageDesign">
+          <div id="logInPage">
+            <div id="rightPannel">
+              <div id="loginPannel">
+                <div id="searchPannel">
+
+                  <div id="searchForm">
+                    <input type="search" autofocus required [formControl]="searchText" id="search" placeholder="Search"
+                      (blur)="clear()" />
+                    <div id="searchBtn" style="cursor: pointer">
+                      <button type="submit" class="search_btn" (click)="searchproblem(searchText)">
+                        Search
+                      </button>
+                    </div>
+                    <div id="searchList" *ngIf="searchResult && searchResult.problem && searchResult.problem.length >0">
+                      <div class="searchItem" *ngFor="let search of searchResult.problem;let i=index"
+                        (click)="navigate(search.questionId , search.elements[0].nextAction,search.category,search.treeId)">
+                        {{search.label}}</div>
+                    </div>
+                    <div id="searchList" *ngIf="utilService.isNonEmpty(message) || isValid">
+                      <div class="searchItem" style="cursor: pointer">
+                        {{isValid ? ' Please enter text to search' : message}}</div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

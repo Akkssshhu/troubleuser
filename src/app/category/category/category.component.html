@@ -1,0 +1,19 @@
+<div class="container" style="min-height: 625px;">
+    <div class="row">
+        <div>
+            <h3>Categories:</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div id="thumbnailPannel" style="margin-top: 30px!important;">
+            <div class="thumbnail" *ngFor="let node of parentNode;let i=index" (click)="goToSubCategoty(node.nodeId,node.friendlyName)">
+                <div class="categoryContent">
+                    <div class="heightcategory">
+                        <img src="{{node.nodeIconURL}}" class="categoryImg img-fluid rounded mx-auto d-block mx-auto mt-auto mb-auto" />
+                    </div>
+                    <div id="machineName">{{node.friendlyName}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

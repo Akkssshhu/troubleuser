@@ -1,0 +1,80 @@
+<div id="headerWrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 marginTopBottom">
+                <div id="header">
+                    <div id="logo" (click)="logoClick()"></div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 marginTopBottom" *ngIf="URL !=='/login' && URL !== '/forgotPassword'">
+
+                <div class="advanced-search">
+                    <!-- *ngIf="URL !=='troubleshoot'" -->
+                    <!-- <button type="button" class="category-btn">
+                      <span style="padding-right: 20px;">All Categories</span>
+                      <span style="float:right;"><i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                    </button> -->
+                    <form action="#" class="input-group" [formGroup]="myformgroup">
+                        <!-- <input type="text" placeholder="Tell us your problem?" formControlName="searchText"> -->
+                        <input type="search" (focus)='show =true' placeholder="Tell us your problem?" formControlName="searchText" [(ngModel)]="searchValue" #searchvalue autofocus required (blur)="clear()">
+                        <button type="button" (focus)='show =true' (click)='searchproblem(searchvalue.value);'><i class="fa fa-search" aria-hidden="true"></i></button>
+                        <div *ngIf='show' style="z-index: 10000;">
+                            <div id="searchList" class="searchlistcontainer" *ngIf="searchResult && searchResult.problem && searchResult.problem.length >0">
+                                <div class="searchItem" *ngFor="let search of searchResult.problem;let i=index" (click)='navigates(search.questionId , search.elements[0].nextAction,search.category,search.treeId);  searchValue=""'>
+                                    {{search.label}}
+                                </div>
+                            </div>
+                        </div>
+                        <div id="searchList" *ngIf="utilService.isNonEmpty(message) || isValid">
+                            <div class="searchItem" style="cursor: pointer">
+                                {{isValid ? ' Please enter text to search' : message}}
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 marginTopBottom">
+                <div id="userInfo" *ngIf="URL !=='/login' && URL !== '/forgotPassword' && key ==undefined">
+                    <!-- <div id="searchIcon" (click)="search()" *ngIf="troublePath !=='troubleshoot'">
+                    </div> -->
+                    <div class="dropdown" style="min-width: 190px;">
+                        <div class="name">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                            <span style="padding-left: 10px;">{{(USER_OBJ && USER_OBJ.firstName) ? USER_OBJ.firstName : ''}}
+                                {{(USER_OBJ && USER_OBJ.lastName) ? USER_OBJ.lastName : ''}}</span><i class="fa fa-angle-down"></i>
+                        </div>
+                        <div class="dropdown-content">
+                            <a href="javascript:" (click)="changepassword()" style=" border-bottom: 1px solid white;">
+                                <i class="fa fa-key" aria-hidden="true"></i> Change Password
+                            </a>
+                            <a href="javascript:" (click)="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div id="navigationDisplay" class="breadcrumb-text" *ngIf="URL !=='/login' && URL !=='/category/0' && URL !== '/forgotPassword' && URL !== '/chatbot' && key ==undefined">
+                    <div *ngIf="URL !=='/login' && URL !=='/category/0' && URL !== '/forgotPassword' && key ==undefined" (click)="backToPage('category',0,0)" class="navigationEntity">
+                        <i class="fa fa-lg fa-home" aria-hidden="true"></i>
+                    </div>
+                    <span *ngIf="breadCrumbArray && breadCrumbArray.length > 0">
+                        <div *ngFor="let breadCrumb of breadCrumbArray;let i=index">
+                            <div class="navigationEntity" *ngIf="breadCrumb.type != ''" (click)="i+1 !== breadCrumbArray ? backToPage( breadCrumbArray[i].type,breadCrumbArray[i].id,i) : ''">
+                                {{breadCrumbArray[i].category}}
+                                <span *ngIf="breadCrumbArray[i+1] && breadCrumbArray[i+1].category !== '' && breadCrumb.type != ''">&nbsp;
+                                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </span>
+                </div>
+            </div>
+            </span>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div>
+    <router-outlet></router-outlet>
+</div>
+<app-footer></app-footer>

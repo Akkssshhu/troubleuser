@@ -1,0 +1,84 @@
+<div style="background: #DDDDDD;height: 100%;">
+<div class="container">
+  <div class="row">
+    <!-- <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div id="logInPage">
+        <div id="rightPannel">
+          <div id="loginPannel">
+            <div id="heading">Welcome to ITARIUM</div>
+            <form id="loginform" [formGroup]="loginForm">
+              <div id="heading">LOGIN</div>
+              <div class="formEntity">
+                <label>Username <span style="color:red">*</span></label>
+                <input type="text" autofocus
+                  [class.invalid-input]="!loginForm.controls['username'].valid && loginForm.controls['username'].touched"
+                  required formControlName="username" class="inputTxt" name="UserName" id="UserName" placeholder="">
+              </div>
+              <div class="formEntity">
+                <label>Password <span style="color:red">*</span></label>
+                <input type="password" required formControlName="password" class="inputTxt" name="Password" id="Password"
+                  placeholder=" "
+                  [class.invalid-input]="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">
+                <div id="forgotPasswordBtn" (click)="forgotPassword()">Forgot Your Password?</div>
+              </div>
+      
+              <p class="text-danger inputTxt">{{message}}</p>
+      
+              <div class="formEntity">
+                <div id="logInBtn">
+                  <button type="submit" class="log_btn" (click)="logIn()">
+                    {{!busy ? 'LOGIN' : 'Wait..'}}
+                  </button>
+                </div>
+              </div>
+            </form>
+            <div id="copyRigths">&copy; Copyright 2019 ITARIUM Technologies India Pvt. Ltd. All Rights Reserved</div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <div class="mdl-layout mdl-js-layout centered" style="margin-bottom: 50px;">
+         
+                        <form id="loginform" [formGroup]="loginForm" style="background: white;">
+                    <div class="mdl-card mdl-shadow--6dp">
+                        <div class="mdl-card__title mdl-color--primary mdl-color-text--white relative">
+                            <h2 class="mdl-card__title-text">Login</h2>
+                        </div>
+                        <div class="mdl-card__supporting-text">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" placeholder="Username" required formControlName="username"/>
+                                <label class="mdl-textfield__label" ></label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="password" required formControlName="password"  placeholder="Password"/>
+                                <label class="mdl-textfield__label" ></label>
+                            </div>
+                        </div>
+    
+                        <div class="mdl-card__actions mdl-card--border">
+                            <div class="mdl-grid">
+                                <button (click)="logIn()" class="mdl-cell mdl-cell--12-col mdl-button mdl-button--raised mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+                                    {{!busy ? 'LOGIN' : 'Wait..'}}
+                                </button>
+                            </div>
+    
+                            <div class="mdl-grid">
+                                <div class="mdl-cell mdl-cell--12-col">
+                                    <a (click)="forgotPassword()" class="mdl-color-text--primary" style="float: right">Forgot Password?</a>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-danger inputTxt">{{message}}</p>
+                    </div>
+                        </form>
+                  
+        
+    </div>
+    
+    </div>
+  </div>
+  </div>
+</div>
+<div style="background: #DDDDDD;height: 150px;" class="hidden-xs hidden-sm hidden-md"></div>
